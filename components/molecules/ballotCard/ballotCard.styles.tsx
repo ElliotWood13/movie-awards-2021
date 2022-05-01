@@ -27,13 +27,15 @@ const BallotCardWrapper = styled.div<BallotCardWrapperProps>`
       : `background-color: ${color.grey[700]};`};
   box-shadow: ${shadow.card};
 
-  :hover {
-    background-color: ${color.brandHover};
-    box-shadow: ${shadow.cardHover};
-  }
+  @media (hover: hover) and (pointer: fine) {
+    :hover {
+      background-color: ${color.brandHover};
+      box-shadow: ${shadow.cardHover};
+    }
 
-  &:hover ${BallotCardTitle} {
-    color: ${color.grey[200]};
+    &:hover ${BallotCardTitle} {
+      color: ${color.grey[200]};
+    }
   }
 `;
 

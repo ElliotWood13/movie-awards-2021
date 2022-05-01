@@ -34,7 +34,8 @@ export const Awards = () => {
       {openSubmissionModal && (
         <Modal setModalOpen={setOpenSubmissionModal}>
           <SubmissionSuccessMessage>
-            Thank you for submitting your nominees!
+            Thank you for your nominations! The awards will take place on 13th
+            May 2022.
           </SubmissionSuccessMessage>
         </Modal>
       )}

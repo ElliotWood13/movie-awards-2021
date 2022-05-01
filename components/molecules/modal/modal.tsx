@@ -6,8 +6,6 @@ import {
   CloseButton,
 } from "./modal.styles";
 
-export type modalTypes = "video";
-
 interface ModalProps {
   children: any;
   setModalOpen: Dispatch<SetStateAction<boolean>>;
