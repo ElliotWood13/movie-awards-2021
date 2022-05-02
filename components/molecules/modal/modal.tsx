@@ -1,9 +1,11 @@
-import FocusTrap from "focus-trap-react";
 import React, { Dispatch, SetStateAction, useEffect } from "react";
+import { FocusOn } from "react-focus-on";
+import { color } from "../../../design";
 import {
   ModalOuterContainer,
   ModalInnerContainer,
   CloseButton,
+  StyledSvg,
 } from "./modal.styles";
 
 interface ModalProps {
@@ -26,20 +28,15 @@ export const Modal = ({ children, setModalOpen }: ModalProps): any => {
   }, []);
 
   return (
-    <FocusTrap>
-      <ModalOuterContainer
-        id="dialog"
-        role="dialog"
-        aria-modal="true"
-        onClick={() => setModalOpen(false)}
-      >
+    <FocusOn>
+      <ModalOuterContainer id="dialog" role="dialog" aria-modal="true">
         <ModalInnerContainer>
           {children}
           <CloseButton type="button" onClick={() => setModalOpen(false)}>
-            X
+            <StyledSvg type="close" fill={color.grey[900]} />
           </CloseButton>
         </ModalInnerContainer>
       </ModalOuterContainer>
-    </FocusTrap>
+    </FocusOn>
   );
 };

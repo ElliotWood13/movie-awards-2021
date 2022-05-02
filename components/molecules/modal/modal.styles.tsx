@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { pxToRem, mediaQuery, color, shadow } from "../../../design";
+import Svg, { SvgProps } from "../../../helpers/svgMapper";
 
 const ModalOuterContainer = styled.div`
   display: flex;
@@ -58,4 +59,14 @@ const CloseButton = styled.button`
   border: 0;
 `;
 
-export { ModalOuterContainer, ModalInnerContainer, CloseButton };
+const StyledSvg = styled(Svg)<SvgProps>`
+  height: ${pxToRem(18)};
+  width: ${pxToRem(18)};
+
+  ${mediaQuery.sm} {
+    height: ${pxToRem(24)};
+    width: ${pxToRem(24)};
+  }
+`;
+
+export { ModalOuterContainer, ModalInnerContainer, CloseButton, StyledSvg };
