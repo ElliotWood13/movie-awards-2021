@@ -1,9 +1,6 @@
 import { PageTitle } from "../../atoms/pageTitle";
 import { PageHeaderContent, PageHeaderWrapper } from "./pageHeader.styles";
-
-interface PageHeaderProps {
-  title: string;
-}
+import { PageHeaderProps } from "./types";
 
 export const PageHeader = ({ title }: PageHeaderProps) => {
   return (

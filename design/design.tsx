@@ -8,8 +8,9 @@ export const color = {
   brand: "#009b86",
   brandHover: "#34ac9c",
   body: "#fff",
-  logo: "#0D2436",
-  pageBackground: "#0D2436",
+  logo: "#0d2436",
+  pageBackground: "#0d2436",
+  pageBackgroundAlternative: "#0b2a41",
   white: {
     100: "#fff",
   },
@@ -19,9 +20,13 @@ export const color = {
     300: "#76848f",
     900: "#1f1f1f",
   },
+  red: {
+    100: "#fdeded",
+    200: "#f38280",
+  },
   button: {
     primary: "#009b86",
-    secondary: "#0D2436",
+    secondary: "#0d2436",
   },
 };
 

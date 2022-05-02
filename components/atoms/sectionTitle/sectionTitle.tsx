@@ -1,8 +1,5 @@
 import { Title } from "./sectionTitle.styles";
-
-interface SectionTitleProps {
-  text: string;
-}
+import { SectionTitleProps } from "./types";
 
 export const SectionTitle = ({ text }: SectionTitleProps) => {
   return <Title>{text}</Title>;

@@ -3,8 +3,11 @@ import {
   SubmitNominationsWrapper,
   SubmitNominationsContentWrapper,
 } from "./submitNominations.styles";
+import { SubmitNominationsProps } from "./types";
 
-export const SubmitNominations = ({ setOpenSubmissionModal }) => {
+export const SubmitNominations = ({
+  setOpenSubmissionModal,
+}: SubmitNominationsProps) => {
   return (
     <SubmitNominationsWrapper>
       <SubmitNominationsContentWrapper>

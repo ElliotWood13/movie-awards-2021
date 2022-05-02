@@ -12,11 +12,12 @@ import { BallotCardListProps, Nominee } from "./types";
 export const BallotCardList = ({
   ballotTitle,
   nominees,
+  backgroundColor,
 }: BallotCardListProps) => {
   const [nomineeSelected, setNomineeSelected] = useState("");
 
   return (
-    <SectionWrapper>
+    <SectionWrapper backgroundColor={backgroundColor}>
       <SectionPosition>
         <SectionTitleWrapper>
           <SectionTitle text={ballotTitle} />

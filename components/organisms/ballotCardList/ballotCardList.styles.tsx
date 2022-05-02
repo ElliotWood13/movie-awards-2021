@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { layout, mediaQuery, pxToRem } from "../../../design";
 
-const SectionWrapper = styled.section`
+interface SectionWrapperProps {
+  backgroundColor: string;
+}
+
+const SectionWrapper = styled.section<SectionWrapperProps>`
   display: flex;
   flex-wrap: wrap;
   padding: ${pxToRem(30)} ${pxToRem(20)};
+  background-color: ${(props) => props.backgroundColor};
 
   ${mediaQuery.sm} {
     padding: ${pxToRem(60)} ${pxToRem(20)};

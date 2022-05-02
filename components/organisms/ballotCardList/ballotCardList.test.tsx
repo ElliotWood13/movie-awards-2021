@@ -12,6 +12,7 @@ const ballotCardListProps: BallotCardListProps = {
       id: "lee-isaac-chung",
     },
   ],
+  backgroundColor: "#fff",
 };
 
 describe("ballot card list", () => {

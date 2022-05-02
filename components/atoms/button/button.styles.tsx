@@ -12,9 +12,13 @@ const Primary = styled.button`
   padding: ${pxToRem(8)} ${pxToRem(16)};
   box-shadow: ${shadow.button};
 
-  &:hover {
+  :hover {
     background-color: ${color.brandHover};
-    transition: 0.1s ease-in-out;
+    transform: scale(1.03);
+  }
+
+  :active {
+    transform: scale(1.01);
   }
 `;
 
@@ -29,9 +33,13 @@ const Secondary = styled.button`
   padding: ${pxToRem(8)} ${pxToRem(16)};
   box-shadow: ${shadow.button};
 
-  &:hover {
+  :hover {
     color: ${color.body};
-    transition: 0.1s ease-in-out;
+    transform: scale(1.03);
+  }
+
+  :active {
+    transform: scale(1.01);
   }
 `;
 

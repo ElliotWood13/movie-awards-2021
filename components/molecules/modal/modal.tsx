@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React, { useEffect } from "react";
 import { FocusOn } from "react-focus-on";
 import { color } from "../../../design";
 import {
@@ -7,13 +7,9 @@ import {
   CloseButton,
   StyledSvg,
 } from "./modal.styles";
+import { ModalProps } from "./types";
 
-interface ModalProps {
-  children: any;
-  setModalOpen: Dispatch<SetStateAction<boolean>>;
-}
-
-export const Modal = ({ children, setModalOpen }: ModalProps): any => {
+export const Modal = ({ children, callback }: ModalProps) => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -32,7 +28,11 @@ export const Modal = ({ children, setModalOpen }: ModalProps): any => {
       <ModalOuterContainer id="dialog" role="dialog" aria-modal="true">
         <ModalInnerContainer>
           {children}
-          <CloseButton type="button" onClick={() => setModalOpen(false)}>
+          <CloseButton
+            aria-label="Close modal"
+            type="button"
+            onClick={() => callback()}
+          >
             <StyledSvg type="close" fill={color.grey[900]} />
           </CloseButton>
         </ModalInnerContainer>

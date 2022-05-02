@@ -5,8 +5,8 @@ import { BallotCardList } from "./ballotCardList";
 import { Ballot } from "./types";
 import { Modal } from "../../molecules/modal";
 import { SubmissionSuccessMessage } from "./ballotCardList.styles";
-
-// TODO: Handle error returned from endpoint
+import { onSetSectionBackgroundColor } from "../../../helpers/onSetSectionBackground";
+import { ErrorMessage } from "../../atoms/errorMessage/errorMessage";
 
 export const Ballots = () => {
   const [ballotData, setBallotData] = useState<Ballot[] | []>([]);
@@ -24,22 +24,30 @@ export const Ballots = () => {
       .catch(() => setError(true));
   }, []);
 
+  if (error)
+    return (
+      <ErrorMessage>
+        Unfortunately there was a problem, please try again later...
+      </ErrorMessage>
+    );
+
   return (
     <>
       {!!ballotData.length ? (
         <>
-          {ballotData.map((ballot) => (
+          {ballotData.map((ballot, index) => (
             <BallotCardList
               key={ballot.id}
               ballotTitle={ballot.title}
               nominees={ballot.items}
+              backgroundColor={onSetSectionBackgroundColor(index)}
             />
           ))}
           <SubmitNominations setOpenSubmissionModal={setOpenSubmissionModal} />
         </>
       ) : null}
       {openSubmissionModal && (
-        <Modal setModalOpen={setOpenSubmissionModal}>
+        <Modal callback={() => setOpenSubmissionModal(false)}>
           <SubmissionSuccessMessage aria-label="Submission success">
             Thank you for your nominations! The awards will take place on 13th
             May 2022.

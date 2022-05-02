@@ -12,4 +12,5 @@ export interface Ballot {
 export interface BallotCardListProps {
   ballotTitle: string;
   nominees: Nominee[];
+  backgroundColor: string;
 }
