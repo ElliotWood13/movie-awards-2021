@@ -9,12 +9,7 @@ export interface Ballot {
   items: Nominee[];
 }
 
-export interface onSelectNomineeProps {
-  ballotTitle: string;
-  nomineeTitle: string;
-}
-
-export interface AwardsSectionProps {
+export interface BallotCardListProps {
   ballotTitle: string;
   nominees: Nominee[];
 }

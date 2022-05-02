@@ -1,14 +1,38 @@
 import { Primary, Secondary } from "./button.styles";
+import { ButtonProps } from "./types";
 
-interface ButtonProps {
-  text: string;
-  onClick: () => void;
-}
-
-export const PrimaryButton = ({ text, onClick }: ButtonProps) => {
-  return <Primary onClick={() => onClick()}>{text}</Primary>;
+export const PrimaryButton = ({
+  text,
+  onClick,
+  buttonType = "button",
+  disabled = false,
+}: ButtonProps) => {
+  return (
+    <Primary
+      type={buttonType}
+      disabled={disabled}
+      arira-disabled={disabled ? "true" : "false"}
+      onClick={() => onClick()}
+    >
+      {text}
+    </Primary>
+  );
 };
 
-export const SecondaryButton = ({ text, onClick }: ButtonProps) => {
-  return <Secondary onClick={() => onClick()}>{text}</Secondary>;
+export const SecondaryButton = ({
+  text,
+  onClick,
+  buttonType = "button",
+  disabled = false,
+}: ButtonProps) => {
+  return (
+    <Secondary
+      type={buttonType}
+      disabled={disabled}
+      arira-disabled={disabled ? "true" : "false"}
+      onClick={() => onClick()}
+    >
+      {text}
+    </Secondary>
+  );
 };

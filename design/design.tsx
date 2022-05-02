@@ -17,7 +17,7 @@ export const color = {
     100: "#e8e7ec",
     200: "#cccccc",
     300: "#76848f",
-    700: "#25302f",
+    900: "#1f1f1f",
   },
   button: {
     primary: "#009b86",

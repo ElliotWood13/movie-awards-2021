@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, layout, mediaQuery, pxToRem } from "../../../design";
+import { layout, mediaQuery, pxToRem } from "../../../design";
 
 const SectionWrapper = styled.section`
   display: flex;

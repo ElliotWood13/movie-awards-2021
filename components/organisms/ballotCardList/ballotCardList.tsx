@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { PrimaryButton } from "../../atoms/button";
 import { SectionTitle } from "../../atoms/sectionTitle";
 import { BallotCard } from "../../molecules/ballotCard/ballotCard";
 import {
@@ -7,13 +6,13 @@ import {
   SectionPosition,
   SectionTitleWrapper,
   BallotCardWrapper,
-} from "./awardsSection.styles";
-import { AwardsSectionProps, Nominee } from "./types";
+} from "./ballotCardList.styles";
+import { BallotCardListProps, Nominee } from "./types";
 
-export const AwardsSection = ({
+export const BallotCardList = ({
   ballotTitle,
   nominees,
-}: AwardsSectionProps) => {
+}: BallotCardListProps) => {
   const [nomineeSelected, setNomineeSelected] = useState("");
 
   return (

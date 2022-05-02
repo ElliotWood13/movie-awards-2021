@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Layout } from "../components/layouts/layout";
 import { PageHeader } from "../components/molecules/pageHeader";
-import { Awards } from "../components/organisms/awardsSection/awardsSection-container";
+import { Ballots } from "../components/organisms/ballotCardList/ballotCardList-container";
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <Layout>
         <PageHeader title="Awards 2022" />
-        <Awards />
+        <Ballots />
       </Layout>
     </>
   );

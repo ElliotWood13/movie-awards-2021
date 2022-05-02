@@ -24,7 +24,7 @@ const BallotCardWrapper = styled.div<BallotCardWrapperProps>`
   ${(props) =>
     props.isActiveNominee
       ? `background-color: ${color.brand}`
-      : `background-color: ${color.grey[700]};`};
+      : `background-color: ${color.grey[900]};`};
   box-shadow: ${shadow.card};
 
   @media (hover: hover) and (pointer: fine) {

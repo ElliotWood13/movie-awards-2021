@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { SecondaryButton } from "../../atoms/button";
-import { Nominee } from "../../organisms/awardsSection/types";
+import { Nominee } from "../../organisms/ballotCardList/types";
 import {
   BallotCardTitle,
   BallotCardWrapper,
@@ -33,9 +33,7 @@ export const BallotCard = ({
       </BallotImageWrapper>
       <SecondaryButton
         text="Nominate"
-        onClick={() => {
-          setNomineeSelected(title);
-        }}
+        onClick={() => setNomineeSelected(title)}
       />
     </BallotCardWrapper>
   );
