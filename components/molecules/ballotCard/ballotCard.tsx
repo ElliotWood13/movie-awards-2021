@@ -1,17 +1,11 @@
-import { Dispatch, SetStateAction } from "react";
 import { SecondaryButton } from "../../atoms/button";
-import { Nominee } from "../../organisms/ballotCardList/types";
 import {
   BallotCardTitle,
   BallotCardWrapper,
   BallotImageWrapper,
   StyledImage,
 } from "./ballotCard.styles";
-
-interface BallotCardProps extends Nominee {
-  isActiveNominee: boolean;
-  setNomineeSelected: Dispatch<SetStateAction<string>>;
-}
+import { BallotCardProps } from "./types";
 
 export const BallotCard = ({
   title,
@@ -32,6 +26,7 @@ export const BallotCard = ({
         />
       </BallotImageWrapper>
       <SecondaryButton
+        ariaLabel={`Nominate ${title}`}
         text="Nominate"
         onClick={() => setNomineeSelected(title)}
       />
