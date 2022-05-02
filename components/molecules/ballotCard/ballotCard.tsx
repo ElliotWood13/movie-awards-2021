@@ -25,7 +25,7 @@ export const BallotCard = ({
       <BallotImageWrapper>
         <StyledImage
           src={photoUrL}
-          alt={`A picture of ${title}`}
+          alt={`A film poster of ${title}`}
           width="300px"
           height="350px"
           loading="eager"

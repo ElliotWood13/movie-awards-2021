@@ -26,14 +26,18 @@ export const Ballots = () => {
 
   return (
     <>
-      {ballotData.map((ballot) => (
-        <BallotCardList
-          key={ballot.id}
-          ballotTitle={ballot.title}
-          nominees={ballot.items}
-        />
-      ))}
-      <SubmitNominations setOpenSubmissionModal={setOpenSubmissionModal} />
+      {!!ballotData.length ? (
+        <>
+          {ballotData.map((ballot) => (
+            <BallotCardList
+              key={ballot.id}
+              ballotTitle={ballot.title}
+              nominees={ballot.items}
+            />
+          ))}
+          <SubmitNominations setOpenSubmissionModal={setOpenSubmissionModal} />
+        </>
+      ) : null}
       {openSubmissionModal && (
         <Modal setModalOpen={setOpenSubmissionModal}>
           <SubmissionSuccessMessage aria-label="Submission success">

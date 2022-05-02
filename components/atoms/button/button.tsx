@@ -6,12 +6,14 @@ export const PrimaryButton = ({
   onClick,
   buttonType = "button",
   disabled = false,
+  ariaLabel,
 }: ButtonProps) => {
   return (
     <Primary
       type={buttonType}
       disabled={disabled}
       arira-disabled={disabled ? "true" : "false"}
+      aria-label={ariaLabel}
       onClick={() => onClick()}
     >
       {text}
@@ -22,6 +24,7 @@ export const PrimaryButton = ({
 export const SecondaryButton = ({
   text,
   onClick,
+  ariaLabel,
   buttonType = "button",
   disabled = false,
 }: ButtonProps) => {
@@ -30,6 +33,7 @@ export const SecondaryButton = ({
       type={buttonType}
       disabled={disabled}
       arira-disabled={disabled ? "true" : "false"}
+      aria-label={ariaLabel}
       onClick={() => onClick()}
     >
       {text}

@@ -9,7 +9,9 @@ export const SubmitNominations = ({ setOpenSubmissionModal }) => {
     <SubmitNominationsWrapper>
       <SubmitNominationsContentWrapper>
         <PrimaryButton
+          buttonType="submit"
           text="Submit Nominations"
+          ariaLabel="Submit your selected nominations"
           onClick={() => setOpenSubmissionModal(true)}
         />
       </SubmitNominationsContentWrapper>

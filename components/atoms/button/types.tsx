@@ -5,4 +5,5 @@ export interface ButtonProps {
   onClick: () => void;
   buttonType?: ButtonType;
   disabled?: boolean;
+  ariaLabel?: string;
 }

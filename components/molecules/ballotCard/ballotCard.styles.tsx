@@ -11,6 +11,11 @@ const BallotCardTitle = styled.p`
   font-size: ${pxToRem(24)};
   font-weight: ${fontWeight.bold};
   margin-bottom: ${pxToRem(24)};
+  color: ${color.body};
+`;
+
+const StyledImage = styled(Image)`
+  border-radius: 4px;
 `;
 
 const BallotCardWrapper = styled.div<BallotCardWrapperProps>`
@@ -21,10 +26,11 @@ const BallotCardWrapper = styled.div<BallotCardWrapperProps>`
   padding: ${pxToRem(24)};
   border: 1px solid ${color.grey[300]};
   border-radius: 4px;
+  background-color: ${color.grey[900]};
   ${(props) =>
     props.isActiveNominee
       ? `background-color: ${color.brand}`
-      : `background-color: ${color.grey[900]};`};
+      : `background-color: ${color.grey[700]};`};
   box-shadow: ${shadow.card};
 
   @media (hover: hover) and (pointer: fine) {
@@ -36,15 +42,16 @@ const BallotCardWrapper = styled.div<BallotCardWrapperProps>`
     &:hover ${BallotCardTitle} {
       color: ${color.grey[200]};
     }
+
+    &:hover ${StyledImage} {
+      transition: 0.2s ease-in-out;
+      transform: scale(1.02);
+    }
   }
 `;
 
 const BallotImageWrapper = styled.div`
   margin-bottom: ${pxToRem(32)};
-`;
-
-const StyledImage = styled(Image)`
-  border-radius: 4px;
 `;
 
 export { BallotCardTitle, BallotCardWrapper, BallotImageWrapper, StyledImage };

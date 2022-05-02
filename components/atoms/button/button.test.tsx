@@ -9,23 +9,36 @@ const buttonProps: ButtonProps = {
 };
 
 describe("button", () => {
-  it("should render the <PrimaryButton /> correctly", () => {
-    const { getByText } = render(<PrimaryButton {...buttonProps} />);
-    const buttonText = getByText("test button");
+  it("should render the button correctly", () => {
+    const { getByRole } = render(<PrimaryButton {...buttonProps} />);
+    const button = getByRole("button", { name: "test button" });
 
-    expect(buttonText).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveTextContent("test button");
   });
 
   it("should call onClick when the button is clicked", () => {
     const clickFunc = jest.fn();
-    const { getByText } = render(
+    const { getByRole } = render(
       <PrimaryButton {...buttonProps} onClick={clickFunc} />
     );
 
-    const button = getByText("test button");
+    const button = getByRole("button", { name: "test button" });
     fireEvent.click(button);
 
     expect(clickFunc).toHaveBeenCalled();
     expect(clickFunc).toHaveBeenCalledTimes(1);
+  });
+
+  it("should disable the button when the disable prop is true", () => {
+    const clickFunc = jest.fn();
+    const { getByRole } = render(
+      <PrimaryButton {...buttonProps} disabled={true} />
+    );
+    const button = getByRole("button", { name: "test button" });
+    fireEvent.click(button);
+
+    expect(clickFunc).not.toHaveBeenCalled();
+    expect(button).toBeDisabled();
   });
 });
