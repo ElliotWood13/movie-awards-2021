@@ -2,7 +2,7 @@ type ButtonType = "button" | "submit" | "reset";
 
 export interface ButtonProps {
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   buttonType?: ButtonType;
   disabled?: boolean;
   ariaLabel?: string;
