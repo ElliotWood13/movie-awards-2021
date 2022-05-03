@@ -4,12 +4,16 @@ import {
   BallotCardWrapper,
   BallotImageWrapper,
   StyledImage,
+  BallotLabel,
+  BallotLabelText,
+  BallotRadioInput,
 } from "./ballotCard.styles";
 import { BallotCardProps } from "./types";
 
 export const BallotCard = ({
   title,
   photoUrL,
+  ballotTitle,
   isActiveNominee,
   setNomineeSelected,
 }: BallotCardProps) => {
@@ -25,11 +29,22 @@ export const BallotCard = ({
           loading="eager"
         />
       </BallotImageWrapper>
-      <SecondaryButton
-        ariaLabel={`Nominate ${title}`}
-        text="Nominate"
+
+      <BallotLabel
+        htmlFor={ballotTitle}
         onClick={() => setNomineeSelected(title)}
-      />
+      >
+        <BallotLabelText>Nominate</BallotLabelText>
+        <BallotRadioInput
+          type="radio"
+          name={ballotTitle}
+          id={`${ballotTitle}-${title}`}
+          checked={isActiveNominee}
+          aria-checked={isActiveNominee ? "true" : "false"}
+          value={`${ballotTitle}: ${title}`}
+          onChange={() => setNomineeSelected(title)}
+        />
+      </BallotLabel>
     </BallotCardWrapper>
   );
 };

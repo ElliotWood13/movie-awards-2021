@@ -22,25 +22,4 @@ const Primary = styled.button`
   }
 `;
 
-const Secondary = styled.button`
-  border: 1px solid ${color.white[100]};
-  border-radius: 4px;
-  background-color: ${color.button.secondary};
-  color: ${color.white[100]};
-  text-transform: capitalize;
-  font-size: ${pxToRem(16)};
-  font-weight: ${fontWeight.bold};
-  padding: ${pxToRem(8)} ${pxToRem(16)};
-  box-shadow: ${shadow.button};
-
-  :hover {
-    color: ${color.body};
-    transform: scale(1.03);
-  }
-
-  :active {
-    transform: scale(1.01);
-  }
-`;
-
-export { Primary, Secondary };
+export { Primary };

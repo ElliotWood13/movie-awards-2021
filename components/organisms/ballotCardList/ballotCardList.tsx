@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { SectionTitle } from "../../atoms/sectionTitle";
+import { SectionLegend } from "../../atoms/sectionLegend";
 import { BallotCard } from "../../molecules/ballotCard/ballotCard";
 import {
-  SectionWrapper,
+  SectionFieldset,
   SectionPosition,
   SectionTitleWrapper,
   BallotCardWrapper,
@@ -17,15 +17,16 @@ export const BallotCardList = ({
   const [nomineeSelected, setNomineeSelected] = useState("");
 
   return (
-    <SectionWrapper backgroundColor={backgroundColor}>
+    <SectionFieldset backgroundColor={backgroundColor}>
       <SectionPosition>
         <SectionTitleWrapper>
-          <SectionTitle text={ballotTitle} />
+          <SectionLegend text={ballotTitle} />
         </SectionTitleWrapper>
         <BallotCardWrapper>
           {nominees.map((nominee: Nominee) => (
             <BallotCard
               key={nominee.id}
+              ballotTitle={ballotTitle}
               isActiveNominee={nomineeSelected === nominee.title}
               setNomineeSelected={setNomineeSelected}
               {...nominee}
@@ -33,6 +34,6 @@ export const BallotCardList = ({
           ))}
         </BallotCardWrapper>
       </SectionPosition>
-    </SectionWrapper>
+    </SectionFieldset>
   );
 };

@@ -9,7 +9,7 @@ import {
 } from "./modal.styles";
 import { ModalProps } from "./types";
 
-export const Modal = ({ children, callback }: ModalProps) => {
+export const Modal = ({ children, onCloseModal }: ModalProps) => {
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -31,7 +31,7 @@ export const Modal = ({ children, callback }: ModalProps) => {
           <CloseButton
             aria-label="Close modal"
             type="button"
-            onClick={() => callback()}
+            onClick={() => onCloseModal()}
           >
             <StyledSvg type="close" fill={color.grey[900]} />
           </CloseButton>

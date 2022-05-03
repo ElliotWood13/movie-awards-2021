@@ -7,10 +7,10 @@ interface BallotCardWrapperProps {
 }
 
 const BallotCardTitle = styled.p`
+  margin-bottom: ${pxToRem(24)};
   text-align: center;
   font-size: ${pxToRem(24)};
   font-weight: ${fontWeight.bold};
-  margin-bottom: ${pxToRem(24)};
   color: ${color.body};
 `;
 
@@ -54,4 +54,44 @@ const BallotImageWrapper = styled.div`
   margin-bottom: ${pxToRem(32)};
 `;
 
-export { BallotCardTitle, BallotCardWrapper, BallotImageWrapper, StyledImage };
+const BallotLabel = styled.label`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid ${color.white[100]};
+  border-radius: 4px;
+  background-color: ${color.button.secondary};
+  color: ${color.white[100]};
+  text-transform: capitalize;
+  font-size: ${pxToRem(16)};
+  font-weight: ${fontWeight.bold};
+  padding: ${pxToRem(8)} ${pxToRem(16)};
+  box-shadow: ${shadow.button};
+
+  :hover {
+    color: ${color.body};
+    transform: scale(1.03);
+  }
+
+  :active {
+    transform: scale(1.01);
+  }
+`;
+
+const BallotLabelText = styled.span`
+  margin-right: ${pxToRem(16)};
+`;
+
+const BallotRadioInput = styled.input`
+  cursor: pointer;
+`;
+
+export {
+  BallotCardTitle,
+  BallotCardWrapper,
+  BallotImageWrapper,
+  StyledImage,
+  BallotLabel,
+  BallotLabelText,
+  BallotRadioInput,
+};

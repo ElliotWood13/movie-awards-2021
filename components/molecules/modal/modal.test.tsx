@@ -5,7 +5,7 @@ import { ModalProps } from "./types";
 
 const modalProps: ModalProps = {
   children: <p>Modal child</p>,
-  callback: jest.fn(),
+  onCloseModal: jest.fn(),
 };
 
 describe("modal", () => {
@@ -20,13 +20,15 @@ describe("modal", () => {
   });
 
   it("should call setModalOpen when the close button is clicked", () => {
-    const callback = jest.fn();
-    const { getByRole } = render(<Modal {...modalProps} callback={callback} />);
+    const onCloseModal = jest.fn();
+    const { getByRole } = render(
+      <Modal {...modalProps} onCloseModal={onCloseModal} />
+    );
 
     const closeButton = getByRole("button", { name: "Close modal" });
     fireEvent.click(closeButton);
 
-    expect(callback).toHaveBeenCalled();
-    expect(callback).toHaveBeenCalledTimes(1);
+    expect(onCloseModal).toHaveBeenCalled();
+    expect(onCloseModal).toHaveBeenCalledTimes(1);
   });
 });

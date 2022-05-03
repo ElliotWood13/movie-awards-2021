@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import { layout, mediaQuery, pxToRem } from "../../../design";
 
-interface SectionWrapperProps {
+interface SectionFieldsetProps {
   backgroundColor: string;
 }
 
-const SectionWrapper = styled.section<SectionWrapperProps>`
+const BallotCardForm = styled.form``;
+
+const SectionFieldset = styled.fieldset<SectionFieldsetProps>`
   display: flex;
   flex-wrap: wrap;
   padding: ${pxToRem(30)} ${pxToRem(20)};
   background-color: ${(props) => props.backgroundColor};
+  border: none;
 
   ${mediaQuery.sm} {
     padding: ${pxToRem(60)} ${pxToRem(20)};
@@ -49,7 +52,8 @@ const SubmissionSuccessMessage = styled.p`
 `;
 
 export {
-  SectionWrapper,
+  BallotCardForm,
+  SectionFieldset,
   SectionPosition,
   SectionTitleWrapper,
   BallotCardWrapper,

@@ -33,6 +33,10 @@ h6 {
   color: #0D2436;
 }
 
+legend {
+  font-family: 'Roboto', sans-serif;
+}
+
 button,
 input[type='button'],
 input[type='submit'] {
