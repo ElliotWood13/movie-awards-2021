@@ -6,7 +6,7 @@
 
 #### TEST-INSTRUCTIONS:
 
-To run this application locally you may need to install:
+To run this application locally you may need to run:
 
 1. npm install next
 2. npm install --save-dev typescript @types/react @types/node
