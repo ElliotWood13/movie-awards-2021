@@ -17,7 +17,7 @@ export const BallotCardList = ({
   const [nomineeSelected, setNomineeSelected] = useState("");
 
   return (
-    <SectionFieldset backgroundColor={backgroundColor}>
+    <SectionFieldset role="radiogroup" backgroundColor={backgroundColor}>
       <SectionPosition>
         <SectionTitleWrapper>
           <SectionLegend text={ballotTitle} />
