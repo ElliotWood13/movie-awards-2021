@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { SectionLegend } from "../../atoms/sectionLegend";
-import { BallotCard } from "../../molecules/ballotCard/ballotCard";
+import { SectionLegend } from "./components/sectionLegend";
+import { BallotCard } from "./components/ballotCard";
 import {
   SectionFieldset,
   SectionPosition,

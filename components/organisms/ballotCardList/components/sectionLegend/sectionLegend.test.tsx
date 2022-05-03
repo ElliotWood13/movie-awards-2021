@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { SectionLegend } from "./sectionLegend";
-import { SectionTitleProps } from "./types";
+import { SectionLegendProps } from "./types";
 
-const sectionLegendProps: sectionLegendProps = {
+const sectionLegendProps: SectionLegendProps = {
   text: "Section title",
 };
 

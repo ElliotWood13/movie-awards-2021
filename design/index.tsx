@@ -1,6 +1,7 @@
 export {
   pxToRem,
   color,
+  fontFamily,
   fontWeight,
   breakpoint,
   mediaQuery,

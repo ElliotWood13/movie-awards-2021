@@ -34,6 +34,10 @@ export const gradient = {
   purple: `linear-gradient(87.29deg,#009b86 17.71%,#552586 80.85%)`,
 };
 
+export const fontFamily = {
+  brand: "'Roboto', sans-serif",
+};
+
 export const fontWeight = {
   light: "300",
   normal: "400",

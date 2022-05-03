@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Nominee } from "../../organisms/ballotCardList/types";
+import { Nominee } from "../../types";
 
 export interface BallotCardProps extends Nominee {
   isActiveNominee: boolean;

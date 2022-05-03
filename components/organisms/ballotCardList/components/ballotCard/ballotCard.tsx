@@ -1,4 +1,3 @@
-import { SecondaryButton } from "../../atoms/button";
 import {
   BallotCardTitle,
   BallotCardWrapper,

@@ -1,6 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
 import { get } from "../../../helpers";
-import { SubmitNominations } from "../../molecules/submitNominations";
 import { BallotCardList } from "./ballotCardList";
 import { Ballot } from "./types";
 import { Modal } from "../../molecules/modal";
@@ -10,6 +9,7 @@ import {
 } from "./ballotCardList.styles";
 import { onSetSectionBackgroundColor } from "../../../helpers/onSetSectionBackground";
 import { ErrorMessage } from "../../atoms/errorMessage/errorMessage";
+import { SubmitNominations } from "./components/submitNominations/SubmitNominations";
 
 export const Ballots = () => {
   const [ballotData, setBallotData] = useState<Ballot[] | []>([]);

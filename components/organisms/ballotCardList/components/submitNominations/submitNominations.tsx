@@ -1,4 +1,4 @@
-import { PrimaryButton } from "../../atoms/button";
+import { PrimaryButton } from "../../../../atoms/button";
 import {
   SubmitNominationsWrapper,
   SubmitNominationsContentWrapper,

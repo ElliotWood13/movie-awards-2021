@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, mediaQuery, pxToRem } from "../../../design";
+import { color, mediaQuery, pxToRem } from "../../../../../design";
 
 const SubmitNominationsWrapper = styled.footer`
   position: sticky;

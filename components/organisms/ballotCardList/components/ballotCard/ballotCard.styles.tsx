@@ -1,12 +1,13 @@
 import Image from "next/image";
 import styled from "styled-components";
-import { color, fontWeight, pxToRem, shadow } from "../../../design/design";
+import { color, fontWeight, pxToRem, shadow } from "../../../../../design";
 
 interface BallotCardWrapperProps {
   isActiveNominee: boolean;
 }
 
 const BallotCardTitle = styled.p`
+  flex-grow: 1;
   margin-bottom: ${pxToRem(24)};
   text-align: center;
   font-size: ${pxToRem(24)};
