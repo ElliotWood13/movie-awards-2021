@@ -80,6 +80,7 @@ const BallotLabel = styled.label`
 `;
 
 const BallotLabelText = styled.span`
+  font-size: ${pxToRem(18)};
   margin-right: ${pxToRem(16)};
 `;
 

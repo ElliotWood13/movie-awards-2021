@@ -5,7 +5,7 @@ import Svg, { SvgProps } from "../../../helpers/svgMapper";
 const LogoText = styled.p`
   display: flex;
   align-items: center;
-  font-size: ${pxToRem(18)};
+  font-size: ${pxToRem(24)};
   font-weight: ${fontWeight.bold};
   color: ${color.body};
 `;
