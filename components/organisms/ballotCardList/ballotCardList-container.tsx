@@ -1,7 +1,5 @@
-import { FormEvent, useEffect, useState } from "react";
-import { get } from "../../../helpers";
+import { FormEvent, useState } from "react";
 import { BallotCardList } from "./ballotCardList";
-import { Ballot } from "./types";
 import { Modal } from "../../molecules/modal";
 import {
   BallotCardForm,
@@ -10,22 +8,11 @@ import {
 import { onSetSectionBackgroundColor } from "../../../helpers/onSetSectionBackground";
 import { ErrorMessage } from "../../atoms/errorMessage/errorMessage";
 import { SubmitNominations } from "./components/submitNominations/SubmitNominations";
+import { useBallotData } from "./hooks/useBallotData";
 
 export const Ballots = () => {
-  const [ballotData, setBallotData] = useState<Ballot[] | []>([]);
   const [openSubmissionModal, setOpenSubmissionModal] = useState(false);
-  const [error, setError] = useState(false);
-  const ballotsEndpoint = "http://localhost:3000/api/ballots";
-
-  useEffect(() => {
-    get(ballotsEndpoint)
-      .then((result) => {
-        if (result.items) {
-          setBallotData(result.items);
-        }
-      })
-      .catch(() => setError(true));
-  }, []);
+  const { ballotData, error } = useBallotData();
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
