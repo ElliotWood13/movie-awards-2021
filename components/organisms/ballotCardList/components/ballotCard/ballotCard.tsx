@@ -1,11 +1,11 @@
 import {
-  BallotCardTitle,
   BallotCardWrapper,
   BallotImageWrapper,
   StyledImage,
   BallotLabel,
   BallotLabelText,
   BallotRadioInput,
+  BallotInputWrapper,
 } from "./ballotCard.styles";
 import { BallotCardProps } from "./types";
 
@@ -18,7 +18,7 @@ export const BallotCard = ({
 }: BallotCardProps) => {
   return (
     <BallotCardWrapper isActiveNominee={isActiveNominee}>
-      <BallotCardTitle>{title}</BallotCardTitle>
+      <BallotLabel htmlFor={`${ballotTitle}: ${title}`}>{title}</BallotLabel>
       <BallotImageWrapper>
         <StyledImage
           src={photoUrL}
@@ -29,21 +29,18 @@ export const BallotCard = ({
         />
       </BallotImageWrapper>
 
-      <BallotLabel
-        htmlFor={ballotTitle}
-        onClick={() => setNomineeSelected(title)}
-      >
+      <BallotInputWrapper onClick={() => setNomineeSelected(title)}>
         <BallotLabelText>Nominate</BallotLabelText>
         <BallotRadioInput
           type="radio"
           name={ballotTitle}
-          id={`${ballotTitle}-${title}`}
+          id={`${ballotTitle}: ${title}`}
           checked={isActiveNominee}
           aria-checked={isActiveNominee ? "true" : "false"}
           value={`${ballotTitle}: ${title}`}
           onChange={() => setNomineeSelected(title)}
         />
-      </BallotLabel>
+      </BallotInputWrapper>
     </BallotCardWrapper>
   );
 };
